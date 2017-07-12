@@ -11,6 +11,7 @@ myCluster:
         connectionTimeout: 3000
         soTimeout: 3000
         maxRedirections: 5
+#freemarker
 application:
     message: Hello, Boot
 spring:
@@ -22,3 +23,15 @@ spring:
         expose-request-attributes: true
         expose-session-attributes: true
         request-context-attribute: request
+    #mysql jps
+    datasource:
+        driver-class-name: com.mysql.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/jpatest
+        username: root
+        password: root
+    jpa:
+        hibernate.ddl-auto: update
+        show: true
+    jackson:
+        serialization:
+            indent_output: true

@@ -178,3 +178,23 @@ http://redisdoc.com/index.html
 ### 项目结构
 * redis集群
 * web
+
+### MYSQL JPA 配置说明
+
+```
+1.spring.datasource.driver-class-name=com.mysql.jdbc.Driver
+2.spring.datasource.url=jdbc:mysql://localhost:3306/jpatest
+3.spring.datasource.username=root
+4.spring.datasource.password=123456
+5.spring.jpa.hibernate.ddl-auto=update
+6.spring.jpa.show-sql=true
+7.spring.jackson.serialization.indent_output=true
+```
+```
+1.第一行表示驱动的名称，这个和具体的数据库驱动有关，视情况而定，我这里使用了MySql数据库，所以驱动名为com.mysql.jdbc.Driver 
+2.第二行表示数据库连接地址，当然也是视情况而定 
+3.第三四行表示数据库连接的用户名和密码 
+4.第五行则配置了实体类维护数据库表结构的具体行为，update表示当实体类的属性发生变化时，表结构跟着更新，这里我们也可以取值create，这个create表示启动的时候删除上一次生成的表，并根据实体类重新生成表，这个时候之前表中的数据就会被清空；还可以取值create-drop，这个表示启动时根据实体类生成表，但是当sessionFactory关闭的时候表会被删除；validate表示启动时验证实体类和数据表是否一致；none表示啥都不做。 
+5.第六行表示hibernate在操作的时候在控制台打印真实的sql语句 
+6.第七行表示格式化输出的json字符串
+```
