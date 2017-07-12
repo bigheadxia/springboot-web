@@ -11,14 +11,6 @@ import org.springframework.context.annotation.Configuration;
 import java.util.Collections;
 import java.util.Set;
 
-/**
- * @Title: RedisConfiguration
- * @Package: org.tdcg.redis
- * @Description: redis初始化配置
- * @Author: 二东 <zwd_1222@126.com>
- * @date: 2016/10/24
- * @Version: V1.0
- */
 @Configuration
 public class RedisConfiguration extends CachingConfigurerSupport {
 

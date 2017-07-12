@@ -5,14 +5,6 @@ import org.springframework.cache.CacheManager;
 
 import java.io.*;
 
-/**
- * @Title: SerializingUtil
- * @Package: org.tdcg.util
- * @Description: 序列化工具类，负责byte[]和Object之间的相互转换.
- * @Author: 二东 <zwd_1222@126.com>
- * @date: 2016/10/24
- * @Version: V1.0
- */
 public class SerializingUtil {
 
     private static final Logger logger = Logger.getLogger(CacheManager.class);

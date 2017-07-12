@@ -4,14 +4,7 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 
-/**
- * @Title: ICacheManager
- * @Package: org.tdcg.redis
- * @Description: 缓存接口，定义方法
- * @Author: 二东 <zwd_1222@126.com>
- * @date: 2016/10/24
- * @Version: V1.0
- */
+
 public interface ICacheManager {
 
     /**

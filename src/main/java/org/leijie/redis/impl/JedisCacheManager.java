@@ -14,14 +14,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
-/**
- * @Title: JedisCacheManager
- * @Package: org.tdcg.redis.impl
- * @Description: 接口实现
- * @Author: 二东 <zwd_1222@126.com>
- * @date: 2016/10/24
- * @Version: V1.0
- */
 @Service("iCacheManager")
 public class JedisCacheManager implements ICacheManager {
 

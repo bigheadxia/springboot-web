@@ -2,14 +2,6 @@ package org.leijie.entity;
 
 import java.io.Serializable;
 
-/**
- * @Title: User
- * @Package: org.tdcg.entity
- * @Description: 测试类，用户实体
- * @Author: 二东 <zwd_1222@126.com>
- * @date: 2016/10/24
- * @Version: V1.0
- */
 public class User implements Serializable {
     private static final long serialVersionUID = 3802423545972880637L;
     private String id;

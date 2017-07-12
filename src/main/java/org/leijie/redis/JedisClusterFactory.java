@@ -10,14 +10,7 @@ import java.text.ParseException;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- * @Title: JedisClusterFactory
- * @Package: org.tdcg.redis
- * @Description: 工场类
- * @Author: 二东 <zwd_1222@126.com>
- * @date: 2016/10/24
- * @Version: V1.0
- */
+
 public class JedisClusterFactory implements FactoryBean<JedisCluster>, InitializingBean {
 
 	private GenericObjectPoolConfig genericObjectPoolConfig = new GenericObjectPoolConfig();

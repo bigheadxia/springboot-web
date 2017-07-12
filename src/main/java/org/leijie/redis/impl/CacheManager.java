@@ -8,14 +8,6 @@ import javax.annotation.Resource;
 import java.util.List;
 import java.util.Map;
 
-/**
- * @Title: CacheManager
- * @Package: org.tdcg.redis.impl
- * @Description:
- * @Author: 二东 <zwd_1222@126.com>
- * @date: 2016/10/24
- * @Version: V1.0
- */
 @Service("cacheManager")
 public final class CacheManager {
 
