@@ -1,4 +1,4 @@
-package org.tdcg.redis.impl;
+package org.leijie.redis.impl;
 
 import com.google.common.collect.Maps;
 import org.junit.FixMethodOrder;
