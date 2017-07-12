@@ -13,3 +13,15 @@ myCluster:
         connectionTimeout: 3000
         soTimeout: 3000
         maxRedirections: 5
+
+application:
+    message: Hello, Boot
+spring:
+    freemarker:
+        cache: false
+        charset: UTF-8
+        check-template-location: true
+        content-type: text/html
+        expose-request-attributes: true
+        expose-session-attributes: true
+        request-context-attribute: request

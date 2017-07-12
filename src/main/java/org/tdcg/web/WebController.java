@@ -1,5 +1,6 @@
 package org.tdcg.web;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,10 +23,20 @@ public class WebController {
 //        return "admin/web";
 //    }
 
+    @Value("${application.message}")
+    private String message = "Hello World";
+
+//    @RequestMapping("/")
+//    public String web(Model model){
+//        model.addAttribute("time",new Date());
+//        model.addAttribute("message",message);
+//        return "admin/web";
+//    }
+
     @RequestMapping("/")
     public String web(Model model){
         model.addAttribute("time",new Date());
-        model.addAttribute("message","测试");
-        return "admin/web";
+        model.addAttribute("message",message);
+        return "admin/web2";
     }
 }
