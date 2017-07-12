@@ -1,8 +1,8 @@
-package org.tdcg.redis.impl;
+package org.leijie.redis.impl;
 
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Service;
-import org.tdcg.redis.ICacheManager;
+import org.leijie.redis.ICacheManager;
 
 import javax.annotation.Resource;
 import java.util.List;

@@ -1,4 +1,4 @@
-package org.tdcg.util;
+package org.leijie.util;
 
 import org.apache.log4j.Logger;
 import org.springframework.cache.CacheManager;

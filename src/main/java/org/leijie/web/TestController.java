@@ -1,4 +1,4 @@
-package org.tdcg.web;
+package org.leijie.web;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

@@ -1,4 +1,4 @@
-package org.tdcg.redis;
+package org.leijie.redis;
 
 import java.io.Serializable;
 import java.util.List;

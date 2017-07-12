@@ -1,4 +1,4 @@
-package org.tdcg.nio;
+package org.leijie.nio;
 
 import java.io.FileInputStream;
 import java.nio.Buffer;

@@ -1,4 +1,4 @@
-package org.tdcg.entity;
+package org.leijie.entity;
 
 import java.io.Serializable;
 

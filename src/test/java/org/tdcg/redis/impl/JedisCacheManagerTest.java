@@ -1,17 +1,15 @@
 package org.tdcg.redis.impl;
 
 import com.google.common.collect.Maps;
-import org.junit.After;
-import org.junit.Before;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.MethodSorters;
-import org.junit.runners.Suite;
+import org.leijie.redis.impl.JedisCacheManager;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.tdcg.Application;
-import org.tdcg.entity.User;
+import org.leijie.Application;
+import org.leijie.entity.User;
 
 import javax.annotation.Resource;
 

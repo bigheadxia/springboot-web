@@ -1,11 +1,9 @@
 # server
 server:
     port: 8081
-
 # LOG
 logging:
     config: classpath:logback.xml
-
 # RedisCluster
 myCluster:
     cluster:
@@ -13,7 +11,6 @@ myCluster:
         connectionTimeout: 3000
         soTimeout: 3000
         maxRedirections: 5
-
 application:
     message: Hello, Boot
 spring:

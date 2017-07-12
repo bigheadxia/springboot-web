@@ -1,4 +1,4 @@
-package org.tdcg.redis;
+package org.leijie.redis;
 
 import org.apache.commons.pool2.impl.GenericObjectPoolConfig;
 import org.springframework.beans.factory.FactoryBean;

@@ -1,9 +1,9 @@
-package org.tdcg.redis.impl;
+package org.leijie.redis.impl;
 
 import org.apache.commons.lang.StringUtils;
+import org.leijie.redis.ICacheManager;
 import org.springframework.stereotype.Service;
-import org.tdcg.redis.ICacheManager;
-import org.tdcg.util.SerializingUtil;
+import org.leijie.util.SerializingUtil;
 import redis.clients.jedis.JedisCluster;
 
 import javax.annotation.Resource;
