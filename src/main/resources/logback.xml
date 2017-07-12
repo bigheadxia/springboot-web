@@ -30,6 +30,6 @@
         <appender-ref ref="File"/>
     </root>
     <logger name="org.springframework" level="ERROR"/>
-    <logger name="com.tdcg" level="DEBUG"/>
+    <logger name="org.leijie" level="DEBUG"/>
 
 </configuration>
