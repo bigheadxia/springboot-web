@@ -1,0 +1,15 @@
+# server
+server:
+    port: 8081
+
+# LOG
+logging:
+    config: classpath:logback.xml
+
+# RedisCluster
+myCluster:
+    cluster:
+        host: 192.168.3.118:9001,192.168.3.118:9002,192.168.3.118:9003,192.168.3.118:9004,192.168.3.118:9005,192.168.3.118:9006
+        connectionTimeout: 3000
+        soTimeout: 3000
+        maxRedirections: 5
