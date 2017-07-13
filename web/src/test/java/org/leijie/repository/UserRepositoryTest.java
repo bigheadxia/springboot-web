@@ -25,6 +25,7 @@ public class UserRepositoryTest {
     @Test
     public void test(){
         // 创建10条记录
+        userRepository.deleteAll();
         userRepository.save(new User("AAA", 10));
         userRepository.save(new User("BBB", 20));
         userRepository.save(new User("CCC", 30));
