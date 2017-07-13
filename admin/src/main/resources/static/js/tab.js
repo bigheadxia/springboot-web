@@ -121,7 +121,7 @@ layui.define(['element', 'common'], function (exports) {
                 }
             }
             globalTabIdIndex++;
-            var content = '<iframe src="' + data.href + '" data-id="' + globalTabIdIndex + '"></iframe>';
+            var content = '<iframe src="' + data.href + '" datas-id="' + globalTabIdIndex + '"></iframe>';
             var title = '';
             if (data.icon !== undefined) {
                 if (data.icon.indexOf('fa-') !== -1) {
@@ -132,7 +132,7 @@ layui.define(['element', 'common'], function (exports) {
             }
             title += '<cite>' + data.title + '</cite>';
             if (_config.closed) {
-                title += '<i class="layui-icon layui-unselect layui-tab-close" data-id="' + globalTabIdIndex + '">&#x1006;</i>';
+                title += '<i class="layui-icon layui-unselect layui-tab-close" datas-id="' + globalTabIdIndex + '">&#x1006;</i>';
             }
             var tabId = new Date().getTime();
             //添加tab
@@ -142,12 +142,12 @@ layui.define(['element', 'common'], function (exports) {
                 id: tabId
             });
             //iframe 自适应
-            ELEM.contentBox.find('iframe[data-id=' + globalTabIdIndex + ']').each(function () {
+            ELEM.contentBox.find('iframe[datas-id=' + globalTabIdIndex + ']').each(function () {
                 $(this).height(ELEM.contentBox.height());
             });
             if (_config.closed) {
                 //监听关闭事件
-                ELEM.titleBox.find('li').children('i.layui-tab-close[data-id=' + globalTabIdIndex + ']').on('click', function () {
+                ELEM.titleBox.find('li').children('i.layui-tab-close[datas-id=' + globalTabIdIndex + ']').on('click', function () {
                     if (_config.closeBefore) {//tab关闭之前触发
                         var flag = _config.closeBefore({
                             title: data.title,
@@ -172,7 +172,7 @@ layui.define(['element', 'common'], function (exports) {
             //切换到当前打开的选项卡
             element.tabChange(ELEM.tabFilter, that.getTabId(data.title));
 
-            ELEM.contentBox.find('iframe[data-id=' + globalTabIdIndex + ']').on('load', function () {
+            ELEM.contentBox.find('iframe[datas-id=' + globalTabIdIndex + ']').on('load', function () {
                 //debugger;
                 if (_config.openWait) {
                     layer.close(waitLoadIndex);
@@ -207,10 +207,10 @@ layui.define(['element', 'common'], function (exports) {
                 div.style.backgroundColor = 'white';
 
                 var ul = '<ul>';
-                ul += '<li data-target="refresh" title="刷新当前选项卡"><i class="fa fa-refresh" aria-hidden="true"></i> 刷新</li>';
-                ul += '<li data-target="closeCurrent" title="关闭当前选项卡"><i class="fa fa-close" aria-hidden="true"></i> 关闭当前</li>';
-                ul += '<li data-target="closeOther" title="关闭其他选项卡"><i class="fa fa-window-close-o" aria-hidden="true"></i> 关闭其他</li>';
-                ul += '<li data-target="closeAll" title="关闭全部选项卡"><i class="fa fa-window-close-o" aria-hidden="true"></i> 全部关闭</li>';
+                ul += '<li datas-target="refresh" title="刷新当前选项卡"><i class="fa fa-refresh" aria-hidden="true"></i> 刷新</li>';
+                ul += '<li datas-target="closeCurrent" title="关闭当前选项卡"><i class="fa fa-close" aria-hidden="true"></i> 关闭当前</li>';
+                ul += '<li datas-target="closeOther" title="关闭其他选项卡"><i class="fa fa-window-close-o" aria-hidden="true"></i> 关闭其他</li>';
+                ul += '<li datas-target="closeAll" title="关闭全部选项卡"><i class="fa fa-window-close-o" aria-hidden="true"></i> 全部关闭</li>';
                 ul += '</ul>';
                 div.innerHTML = ul;
                 div.style.top = e.pageY + 'px';
@@ -233,8 +233,8 @@ layui.define(['element', 'common'], function (exports) {
                             //
                             switch (target) {
                                 case 'refresh': //刷新当前
-                                    var src = ELEM.contentBox.find('iframe[data-id=' + id + ']')[0].src;
-                                    ELEM.contentBox.find('iframe[data-id=' + id + ']')[0].src = src;
+                                    var src = ELEM.contentBox.find('iframe[datas-id=' + id + ']')[0].src;
+                                    ELEM.contentBox.find('iframe[datas-id=' + id + ']')[0].src = src;
                                     break;
                                 case 'closeCurrent': //关闭当前
                                     if (clickIndex !== 0) {

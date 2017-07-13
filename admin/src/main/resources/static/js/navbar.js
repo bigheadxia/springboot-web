@@ -202,9 +202,9 @@ layui.define(['element', 'common'], function (exports) {
                 ulHtml += '<a href="javascript:;">';
                 if (data[i].icon !== undefined && data[i].icon !== '') {
                     if (data[i].icon.indexOf('fa-') !== -1) {
-                        ulHtml += '<i class="fa ' + data[i].icon + '" aria-hidden="true" data-icon="' + data[i].icon + '"></i>';
+                        ulHtml += '<i class="fa ' + data[i].icon + '" aria-hidden="true" datas-icon="' + data[i].icon + '"></i>';
                     } else {
-                        ulHtml += '<i class="layui-icon" data-icon="' + data[i].icon + '">' + data[i].icon + '</i>';
+                        ulHtml += '<i class="layui-icon" datas-icon="' + data[i].icon + '">' + data[i].icon + '</i>';
                     }
                 }
                 ulHtml += '<cite>' + data[i].title + '</cite>'
@@ -212,12 +212,12 @@ layui.define(['element', 'common'], function (exports) {
                 ulHtml += '<dl class="layui-nav-child">'
                 for (var j = 0; j < data[i].children.length; j++) {
                     ulHtml += '<dd title="' + data[i].children[j].title + '">';
-                    ulHtml += '<a href="javascript:;" data-url="' + data[i].children[j].href + '">';
+                    ulHtml += '<a href="javascript:;" datas-url="' + data[i].children[j].href + '">';
                     if (data[i].children[j].icon !== undefined && data[i].children[j].icon !== '') {
                         if (data[i].children[j].icon.indexOf('fa-') !== -1) {
-                            ulHtml += '<i class="fa ' + data[i].children[j].icon + '" data-icon="' + data[i].children[j].icon + '" aria-hidden="true"></i>';
+                            ulHtml += '<i class="fa ' + data[i].children[j].icon + '" datas-icon="' + data[i].children[j].icon + '" aria-hidden="true"></i>';
                         } else {
-                            ulHtml += '<i class="layui-icon" data-icon="' + data[i].children[j].icon + '">' + data[i].children[j].icon + '</i>';
+                            ulHtml += '<i class="layui-icon" datas-icon="' + data[i].children[j].icon + '">' + data[i].children[j].icon + '</i>';
                         }
                     }
                     ulHtml += '<cite>' + data[i].children[j].title + '</cite>';
@@ -226,13 +226,13 @@ layui.define(['element', 'common'], function (exports) {
                 }
                 ulHtml += '</dl>';
             } else {
-                var dataUrl = (data[i].href !== undefined && data[i].href !== '') ? 'data-url="' + data[i].href + '"' : '';
+                var dataUrl = (data[i].href !== undefined && data[i].href !== '') ? 'datas-url="' + data[i].href + '"' : '';
                 ulHtml += '<a href="javascript:;" ' + dataUrl + '>';
                 if (data[i].icon !== undefined && data[i].icon !== '') {
                     if (data[i].icon.indexOf('fa-') !== -1) {
-                        ulHtml += '<i class="fa ' + data[i].icon + '" aria-hidden="true" data-icon="' + data[i].icon + '"></i>';
+                        ulHtml += '<i class="fa ' + data[i].icon + '" aria-hidden="true" datas-icon="' + data[i].icon + '"></i>';
                     } else {
-                        ulHtml += '<i class="layui-icon" data-icon="' + data[i].icon + '">' + data[i].icon + '</i>';
+                        ulHtml += '<i class="layui-icon" datas-icon="' + data[i].icon + '">' + data[i].icon + '</i>';
                     }
                 }
                 ulHtml += '<cite>' + data[i].title + '</cite>'

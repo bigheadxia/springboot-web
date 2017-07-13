@@ -12,7 +12,7 @@ layui.define(['jquery'], function(exports) {
 	(function($) {
 
 		// When called on a container with a selector, fetches the href with
-		// ajax into the container or with the data-pjax attribute on the link
+		// ajax into the container or with the datas-pjax attribute on the link
 		// itself.
 		//
 		// Tries to make sure the back button and ctrl+click work the way
@@ -39,7 +39,7 @@ layui.define(['jquery'], function(exports) {
 			return this.on('click.pjax', selector, function(event) {
 				var opts = $.extend({}, optionsFor(container, options))
 				if(!opts.container)
-					opts.container = $(this).attr('data-pjax') || context
+					opts.container = $(this).attr('datas-pjax') || context
 				handleClick(event, opts)
 			})
 		}
@@ -58,7 +58,7 @@ layui.define(['jquery'], function(exports) {
 		//   $(document).pjax('a')
 		//
 		//  $(document).on('click', 'a', function(event) {
-		//    var container = $(this).closest('[data-pjax-container]')
+		//    var container = $(this).closest('[datas-pjax-container]')
 		//    $.pjax.click(event, container)
 		//  })
 		//
@@ -90,7 +90,7 @@ layui.define(['jquery'], function(exports) {
 
 			var defaults = {
 				url: link.href,
-				container: $(link).attr('data-pjax'),
+				container: $(link).attr('datas-pjax'),
 				target: link
 			}
 
@@ -115,7 +115,7 @@ layui.define(['jquery'], function(exports) {
 		// Examples
 		//
 		//  $(document).on('submit', 'form', function(event) {
-		//    var container = $(this).closest('[data-pjax-container]')
+		//    var container = $(this).closest('[datas-pjax-container]')
 		//    $.pjax.submit(event, container)
 		//  })
 		//
@@ -131,7 +131,7 @@ layui.define(['jquery'], function(exports) {
 			var defaults = {
 				type: form.method.toUpperCase(),
 				url: form.action,
-				container: $(form).attr('data-pjax'),
+				container: $(form).attr('datas-pjax'),
 				target: form
 			}
 
@@ -158,7 +158,7 @@ layui.define(['jquery'], function(exports) {
 		// then pushState()'s the loaded URL.
 		//
 		// Works just like $.ajax in that it accepts a jQuery ajax
-		// settings object (with keys like url, type, data, etc).
+		// settings object (with keys like url, type, datas, etc).
 		//
 		// Accepts these extra keys:
 		//
@@ -697,7 +697,7 @@ layui.define(['jquery'], function(exports) {
 		// 2. Extracts inline <title> tags
 		// 3. Builds response Element and extracts fragment if set
 		//
-		// data    - String response data
+		// datas    - String response datas
 		// xhr     - XHR response
 		// options - pjax options Object
 		//
@@ -719,7 +719,7 @@ layui.define(['jquery'], function(exports) {
 				var $head = $body = $(parseHTML(data))
 			}
 
-			// If response data is empty, return fast
+			// If response datas is empty, return fast
 			if($body.length === 0)
 				return obj
 
@@ -739,7 +739,7 @@ layui.define(['jquery'], function(exports) {
 				if($fragment.length) {
 					obj.contents = options.fragment === 'body' ? $fragment : $fragment.contents()
 
-					// If there's no title, look for data-title and title attributes
+					// If there's no title, look for datas-title and title attributes
 					// on the fragment
 					if(!obj.title)
 						obj.title = $fragment.attr('title') || $fragment.data('title')

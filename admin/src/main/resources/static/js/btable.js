@@ -48,7 +48,7 @@ layui.define(['element', 'common', 'paging', 'form'], function (exports) {
         var th = '';
         for (var i = 0; i < columns.length; i++) {
             if (columns[i].sortable) {
-                th += '<th data-name="' + columns[i].field + '">' + columns[i].fieldName + '<div class="btable-order"><div class="up" title="升序"><i class="fa fa-sort-asc" aria-hidden="true"></i></div ><div class="down" title="倒序"><i class="fa fa-sort-desc" aria-hidden="true"></i></div></div></th>';
+                th += '<th datas-name="' + columns[i].field + '">' + columns[i].fieldName + '<div class="btable-order"><div class="up" title="升序"><i class="fa fa-sort-asc" aria-hidden="true"></i></div ><div class="down" title="倒序"><i class="fa fa-sort-desc" aria-hidden="true"></i></div></div></th>';
             } else {
                 th += '<th>' + columns[i].fieldName + '</th>';
             }
@@ -74,7 +74,7 @@ layui.define(['element', 'common', 'paging', 'form'], function (exports) {
         tpl += '<tbody class="btable-content"></tbody>';
         tpl += '</table>';
         if (_config.paged) {
-            tpl += '<div data-type="paged" class="btable-paged"></div>';
+            tpl += '<div datas-type="paged" class="btable-paged"></div>';
         }
         tpl += '</div>';
         $(_config.elem).html(tpl);
@@ -96,7 +96,7 @@ layui.define(['element', 'common', 'paging', 'form'], function (exports) {
             paged: _config.paged,
             pageConfig: { //分页参数配置
                 skip: true,
-                elem: $(_config.elem).find('div[data-type=paged]'), //'#paged', //分页容器
+                elem: $(_config.elem).find('div[datas-type=paged]'), //'#paged', //分页容器
                 pageSize: _config.pageSize || 15 //分页大小
             },
             //数据渲染之前的处理
@@ -108,8 +108,8 @@ layui.define(['element', 'common', 'paging', 'form'], function (exports) {
                 for (var i = 0; i < columns.length; i++) {
                     if (columns[i].format) {
                         $('#' + dataId).find('tr').each(function () {
-                            var id = $(this).find('input[data-item=id]').val();
-                            var $field = $(this).children('td[data-field=' + columns[i].field + ']');
+                            var id = $(this).find('input[datas-item=id]').val();
+                            var $field = $(this).children('td[datas-field=' + columns[i].field + ']');
                             var obj = undefined;
                             for (var j = 0; j < data.length; j++) {
                                 if (data[j].Id == id || data[j].ID == id || data[j].id == id) {
@@ -135,7 +135,7 @@ layui.define(['element', 'common', 'paging', 'form'], function (exports) {
                         $(this).hide();
                         $(this).siblings('div.down').show();
                         $that.siblings('th').each(function () {
-                            if ($(this).attr('data-name')) {
+                            if ($(this).attr('datas-name')) {
                                 $(this).find('div.up').show();
                                 $(this).find('div.down').show();
                             }
@@ -149,7 +149,7 @@ layui.define(['element', 'common', 'paging', 'form'], function (exports) {
                         $(this).hide();
                         $(this).siblings('div.up').show();
                         $that.siblings('th').each(function () {
-                            if ($(this).attr('data-name')) {
+                            if ($(this).attr('datas-name')) {
                                 $(this).find('div.up').show();
                                 $(this).find('div.down').show();
                             }
@@ -292,12 +292,12 @@ layui.define(['element', 'common', 'paging', 'form'], function (exports) {
         tpl += '{{# layui.each(d.list, function(index, item){ }}';
         var tds = '';
         for (var i = 0; i < columns.length; i++) {
-            tds += '<td data-field="' + columns[i].field + '">{{ item.' + columns[i].field + ' }}</td>';
+            tds += '<td datas-field="' + columns[i].field + '">{{ item.' + columns[i].field + ' }}</td>';
         }
         if (options.checkbox) {
-            tds = '<td><input type="checkbox" data-item="id" data-id="{{ item.' + options.field + ' }}" lay-skin="primary" /></td><td>{{ (index+1) }}</td>' + tds;
+            tds = '<td><input type="checkbox" datas-item="id" datas-id="{{ item.' + options.field + ' }}" lay-skin="primary" /></td><td>{{ (index+1) }}</td>' + tds;
         } else {
-            tds = '<td style="display:none;"><input type="hidden" data-item="id" value="{{ item.' + options.field + ' }}" data-id="{{ item.' + options.field + ' }}" name="id" /></td><td>{{ (index+1) }}</td>' + tds;
+            tds = '<td style="display:none;"><input type="hidden" datas-item="id" value="{{ item.' + options.field + ' }}" datas-id="{{ item.' + options.field + ' }}" name="id" /></td><td>{{ (index+1) }}</td>' + tds;
         }
         tpl += '<tr>' + tds + '</tr>'
         tpl += '{{# }); }}';

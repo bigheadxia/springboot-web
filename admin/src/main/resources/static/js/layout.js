@@ -41,14 +41,14 @@ layui.config({
 			//设置数据源有两个方式。
 			//第一：在此页面通过ajax读取设置  举个栗子：
 			//---------这是第一个栗子----------
-			/*$.getJSON('/api/xxx',{moduleId:id},function(data){
+			/*$.getJSON('/api/xxx',{moduleId:id},function(datas){
 				navbar.set({
 					elem: '#side',
-					data: data
+					datas: datas
 				});
 				navbar.render();
-				navbar.on('click(side)', function(data) {
-					tab.tabAdd(data.field);
+				navbar.on('click(side)', function(datas) {
+					tab.tabAdd(datas.field);
 				});
 			});*/
 			//------------栗子结束--------------
@@ -59,8 +59,8 @@ layui.config({
 				url: '/api/xxx?moduleId='+id
 			});
 			navbar.render();
-			navbar.on('click(side)', function(data) {
-				tab.tabAdd(data.field);
+			navbar.on('click(side)', function(datas) {
+				tab.tabAdd(datas.field);
 			});*/
 			//------------栗子结束--------------	
 
@@ -80,7 +80,7 @@ layui.config({
 
 	});
 	//模拟点击内容管理
-	$('.beg-layout-menu').find('a[data-module-id=1]').click();
+	$('.beg-layout-menu').find('a[datas-module-id=1]').click();
 
 	element.on('nav(user)', function(data) {
 		var $a = data.children('a');
