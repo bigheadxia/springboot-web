@@ -35,3 +35,8 @@ spring:
     jackson:
         serialization:
             indent_output: true
+
+management:
+    info:
+        git:
+            mode: full

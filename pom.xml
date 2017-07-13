@@ -26,6 +26,7 @@
         <java.version>1.8</java.version>
         <springboot.version>1.5.3.RELEASE</springboot.version>
         <fastjson.version>1.2.28</fastjson.version>
+        <project.basedir>git@github.com:leideMan/springboot-web</project.basedir>
     </properties>
 
     <dependencies>
@@ -69,6 +70,11 @@
             <version>${fastjson.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+            <version>${springboot.version}</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -111,6 +117,22 @@
                 <version>2.9</version>
                 <configuration>
                     <skip>true</skip>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>pl.project13.maven</groupId>
+                <artifactId>git-commit-id-plugin</artifactId>
+                <version>2.1.15</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>revision</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <dotGitDirectory>${project.basedir}/.git</dotGitDirectory>
                 </configuration>
             </plugin>
         </plugins>
