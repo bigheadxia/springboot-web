@@ -10,6 +10,7 @@
     <modules>
         <module>common-utils</module>
         <module>web</module>
+        <module>admin</module>
     </modules>
     <packaging>pom</packaging>
 
