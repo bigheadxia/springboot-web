@@ -178,6 +178,9 @@ http://redisdoc.com/index.html
 ### 项目结构
 * redis集群
 * web
+* 增加Server-Sent Events(简称SSE) 推送
+SSE是一种能让浏览器通过HTTP连接自动收到服务器端更新的技术
+* web增加定时任务
 
 ### MYSQL JPA 配置说明
 

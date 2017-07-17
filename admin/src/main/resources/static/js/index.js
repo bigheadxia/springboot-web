@@ -11,7 +11,7 @@ layui.config({
         layer = layui.layer,
         navbar = layui.navbar();
     tab = layui.tab({
-        elem: '.admin-nav-card' //设置选项卡容器
+        elem: '.web-nav-card' //设置选项卡容器
         ,
         //maxSetting: {
         //	max: 5,
@@ -51,7 +51,7 @@ layui.config({
     });
     //iframe自适应
     $(window).on('resize', function () {
-        var $content = $('.admin-nav-card .layui-tab-content');
+        var $content = $('.web-nav-card .layui-tab-content');
         $content.height($(this).height() - 147);
         $content.find('iframe').each(function () {
             $(this).height($content.height());
@@ -61,7 +61,7 @@ layui.config({
     //设置navbar
     navbar.set({
         spreadOne: true,
-        elem: '#admin-navbar-side',
+        elem: '#web-navbar-side',
         cached: true,
         data: navs
 		/*cached:true,
@@ -81,31 +81,31 @@ layui.config({
         });
     });
 
-    $('.admin-side-toggle').on('click', function () {
-        var sideWidth = $('#admin-side').width();
+    $('.web-side-toggle').on('click', function () {
+        var sideWidth = $('#web-side').width();
         if (sideWidth === 200) {
-            $('#admin-body').animate({
+            $('#web-body').animate({
                 left: '0'
-            }); //admin-footer
-            $('#admin-footer').animate({
+            }); //web-footer
+            $('#web-footer').animate({
                 left: '0'
             });
-            $('#admin-side').animate({
+            $('#web-side').animate({
                 width: '0'
             });
         } else {
-            $('#admin-body').animate({
+            $('#web-body').animate({
                 left: '200px'
             });
-            $('#admin-footer').animate({
+            $('#web-footer').animate({
                 left: '200px'
             });
-            $('#admin-side').animate({
+            $('#web-side').animate({
                 width: '200px'
             });
         }
     });
-    $('.admin-side-full').on('click', function () {
+    $('.web-side-full').on('click', function () {
         var docElm = document.documentElement;
         //W3C  
         if (docElm.requestFullscreen) {
@@ -172,8 +172,8 @@ function lock($, layer) {
         success: function (layero, lockIndex) {
             isShowLock = true;
             //给显示用户名赋值
-            //layero.find('div#lockUserName').text('admin');
-            //layero.find('input[name=username]').val('admin');
+            //layero.find('div#lockUserName').text('web');
+            //layero.find('input[name=username]').val('web');
             layero.find('input[name=password]').on('focus', function () {
                 var $this = $(this);
                 if ($this.val() === '输入密码解锁..') {

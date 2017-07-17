@@ -4,8 +4,13 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Date;
+import java.util.Random;
 
 /**
  * Created with IDEA
@@ -20,7 +25,7 @@ public class WebController {
 //    public String web(Map<String,Object> model){
 //        model.put("time",new Date());
 //        model.put("message","测试");
-//        return "admin/web";
+//        return "web/web";
 //    }
 
     @Value("${application.message}")
@@ -30,13 +35,26 @@ public class WebController {
 //    public String web(Model model){
 //        model.addAttribute("time",new Date());
 //        model.addAttribute("message",message);
-//        return "admin/web";
+//        return "web/web";
 //    }
 
     @RequestMapping("/")
     public String web(Model model){
         model.addAttribute("time",new Date());
         model.addAttribute("message",message);
-        return "admin/web2";
+        return "web/web2";
+    }
+    static int i = 1;
+    @RequestMapping("/call")
+    public void callback(HttpServletResponse response, @RequestParam int id) throws IOException, InterruptedException {
+        response.setContentType("text/event-stream");
+        response.setCharacterEncoding("UTF-8");
+        PrintWriter writer = response.getWriter();
+        Random random = new Random();
+        System.out.println("-----------"+i+"--------id="+id+"-----");
+        Thread.sleep(5000);
+        writer.write("data: 测试"+ i+"\n\n");
+        i++;
+        writer.close();
     }
 }

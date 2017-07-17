@@ -187,7 +187,7 @@ layui.define(['element', 'common'], function (exports) {
         }
         if (_config.contextMenu) {
             element.on('tab(' + ELEM.tabFilter + ')', function (data) {
-                $(document).find('div.admin-contextmenu').remove();
+                $(document).find('div.web-contextmenu').remove();
             });
             ELEM.titleBox.find('li').on('contextmenu', function (e) {
                 var $that = $(e.target);
@@ -196,13 +196,13 @@ layui.define(['element', 'common'], function (exports) {
 
                 var $target = e.target.nodeName === 'LI' ? e.target : e.target.parentElement;
                 //判断，如果存在右键菜单的div，则移除，保存页面上只存在一个
-                if ($(document).find('div.admin-contextmenu').length > 0) {
-                    $(document).find('div.admin-contextmenu').remove();
+                if ($(document).find('div.web-contextmenu').length > 0) {
+                    $(document).find('div.web-contextmenu').remove();
                 }
                 //创建一个div
                 var div = document.createElement('div');
                 //设置一些属性
-                div.className = 'admin-contextmenu';
+                div.className = 'web-contextmenu';
                 div.style.width = '130px';
                 div.style.backgroundColor = 'white';
 
@@ -222,7 +222,7 @@ layui.define(['element', 'common'], function (exports) {
                 var id = $($target).find('i.layui-tab-close').data('id');
                 //获取当前点击选项卡的索引值
                 var clickIndex = $($target).attr('lay-id');
-                var $context = $(document).find('div.admin-contextmenu');
+                var $context = $(document).find('div.web-contextmenu');
                 if ($context.length > 0) {
                     $context.eq(0).children('ul').children('li').each(function () {
                         var $that = $(this);
