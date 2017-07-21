@@ -15,6 +15,9 @@ myCluster:
 application:
     message: Hello, Boot
 spring:
+    redis:
+      host: 192.168.3.3
+      port: 6379
     freemarker:
         cache: false
         charset: UTF-8

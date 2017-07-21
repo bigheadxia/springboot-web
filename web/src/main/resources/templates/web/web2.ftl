@@ -84,7 +84,7 @@
     function fn(msg) {
         if (window.Notification) {
             if (Notification.permission === 'granted') {
-                var notification = new Notification('新订单通知', { body: msg ,icon:'https://s5.lairen.com/img/home/begin-img.jpg',silent:true});
+                var notification = new Notification('温馨提示', { body: msg ,icon:'http://upload.lairen.com/boUser/mobile_share/20170622094725960_share.jpg?r=0.6834564079754084',silent:true});
                 notification.onclick = function (e) {
                     alert("点击了我")//可以点击打开一个网址
                 }

@@ -53,7 +53,7 @@ public class WebController {
         Random random = new Random();
         System.out.println("-----------"+i+"--------id="+id+"-----");
         Thread.sleep(5000);
-        writer.write("data: 测试"+ i+"\n\n");
+        writer.write("data: 您有3条未指派订单，请及时处理！"+"\n\n");
         i++;
         writer.close();
     }
