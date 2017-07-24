@@ -29,7 +29,7 @@ spring:
     #mysql jps
     datasource:
         driver-class-name: com.mysql.jdbc.Driver
-        url: jdbc:mysql://localhost:3306/jpatest
+        url: jdbc:mysql://192.168.3.251:3306/jpatest
         username: root
         password: root
     jpa:
