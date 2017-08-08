@@ -42,6 +42,7 @@ public class WebController {
     public String web(Model model){
         model.addAttribute("time",new Date());
         model.addAttribute("message",message);
+        System.out.println(333);
         return "web/web2";
     }
     static int i = 1;

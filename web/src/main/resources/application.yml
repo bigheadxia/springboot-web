@@ -38,7 +38,10 @@ spring:
     jackson:
         serialization:
             indent_output: true
-
+    #此时restart类加载器还会初始化，但不会监视文件更新
+    devtools:
+        restart:
+            enabled: false
 management:
     info:
         git:
